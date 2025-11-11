@@ -15,29 +15,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     
-    - name: Display environment info
+    - name: Add current directory to Python path
       run: |
-        echo "Operating System: ${{ matrix.os }}"
-        echo "Python version: ${{ matrix.python-version }}"
-        python --version
+        echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+        # Для Windows
+        echo "Current directory: $PWD"
+        python -c "import sys; print('Python path:', sys.path)"
     
-    - name: Verify project structure
+    - name: Run tests with Python path
       run: |
-        echo "Project files:"
-        ls -la
-        echo "Python source files:"
-        find . -name "*.py" -not -path "./.github/*" -type f
-    
-    - name: Run geometry tests
-      run: |
-        python -m unittest discover -v
-      
-    - name: Test completion status
-      if: always()
-      run: |
-        echo "✅ Geometry tests completed on ${{ matrix.os }} with Python ${{ matrix.python-version }}"
+        python -c "import sys; sys.path.append('.'); import unittest; unittest.main(module=None, argv=['python', 'discover', '-v'])"
