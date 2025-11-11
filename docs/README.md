@@ -58,6 +58,14 @@ c - длина гипотенузы.
 - perimeter(3, 4, 5)  вернет 12
 - perimeter(2, 1, 5)  вернет 8 
 ```
+
+# tests
+Чтобы запустить тесты нужно запустить эти команды:
+```
+~/.local/bin/coverage run -m unittest discover
+~/.local/bin/coverage report
+```
+
 # Commits history
 
 1.  * 86edb1c (origin/release) L-05: Update Docs. Add user agreement info
