@@ -5,6 +5,8 @@ def triangle_area(a, h):
     # h: высота треугольника
     # Возвращаемое значение:
     # число, являющееся произведением числа а на h и разделенное на 2.
+    if a <= 0 or h <= 0:
+        return "wrong input"
     return a * h / 2 
 
 def triangle_perimeter(a, b, c): 
@@ -15,4 +17,6 @@ def triangle_perimeter(a, b, c):
     # c:длина гипотенузы
     # Возвращаемое значение:
     # число, являющееся сложением чисел а b и c.
+    if a <= 0 or b <= 0 or c <= 0:
+        return "wrong input"
     return a + b + c 

@@ -7,9 +7,9 @@ def circle_area(r):
     # r: радиус круга
     # Возвращаемое значение:
     # число, являющееся произведением числа пи на r в квадрате.
+    if r <= 0:
+        return "wrong input"
     return math.pi * r * r
-
-print(circle_area(2))
 
 def circle_perimeter(r):
     # возвращает периметр круга.
@@ -17,5 +17,7 @@ def circle_perimeter(r):
     # r: радиус круга
     # Возвращаемое значение:
     # число, являющееся произведением числа пи на r и 2.
+    if r <= 0:
+        return "wrong input"
     return 2 * math.pi * r
 

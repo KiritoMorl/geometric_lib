@@ -7,7 +7,7 @@ from triangle import triangle_area, triangle_perimeter
 class SquareTestCase(unittest.TestCase):
     def test_zero_mul(self):
         res = square_area(0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
        
     def test_square_mul(self):
         res = square_area(10)
@@ -15,7 +15,7 @@ class SquareTestCase(unittest.TestCase):
     
     def test_square_negative(self):
         res = square_area(-5)
-        self.assertEqual(res, 25)
+        self.assertEqual(res, "wrong input")
     
     def test_square_float(self):
         res = square_area(2.5)
@@ -23,7 +23,7 @@ class SquareTestCase(unittest.TestCase):
     
     def test_square_perimeter_zero(self):
         res = square_perimeter(0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
     
     def test_square_perimeter_positive(self):
         res = square_perimeter(5)
@@ -31,7 +31,7 @@ class SquareTestCase(unittest.TestCase):
     
     def test_square_perimeter_negative(self):
         res = square_perimeter(-3)
-        self.assertEqual(res, -12)
+        self.assertEqual(res, "wrong input")
     
     def test_square_perimeter_float(self):
         res = square_perimeter(1.5)
@@ -41,7 +41,7 @@ class SquareTestCase(unittest.TestCase):
 class TriangleTestCase(unittest.TestCase):
     def test_zero_mul(self):
         res = triangle_area(0, 5)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
        
     def test_square_mul(self):
         res = triangle_area(10, 2)
@@ -49,15 +49,15 @@ class TriangleTestCase(unittest.TestCase):
     
     def test_triangle_area_zero_height(self):
         res = triangle_area(10, 0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
     
     def test_triangle_area_negative_base(self):
         res = triangle_area(-5, 4)
-        self.assertEqual(res, -10)
+        self.assertEqual(res, "wrong input")
     
     def test_triangle_area_negative_height(self):
         res = triangle_area(5, -4)
-        self.assertEqual(res, -10)
+        self.assertEqual(res, "wrong input")
     
     def test_triangle_area_float(self):
         res = triangle_area(3.5, 2.0)
@@ -81,11 +81,11 @@ class TriangleTestCase(unittest.TestCase):
     
     def test_perimeter_zero_sides(self):
         res = triangle_perimeter(0, 0, 0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
     
     def test_perimeter_negative_sides(self):
         res = triangle_perimeter(-2, -3, -4)
-        self.assertEqual(res, -9)
+        self.assertEqual(res, "wrong input")
     
     def test_perimeter_float_sides(self):
         res = triangle_perimeter(1.5, 2.5, 3.5)
@@ -93,13 +93,13 @@ class TriangleTestCase(unittest.TestCase):
     
     def test_perimeter_mixed_signs(self):
         res = triangle_perimeter(5, -3, 2)
-        self.assertEqual(res, 4)
+        self.assertEqual(res, "wrong input")
 
 
 class CircleTestCase(unittest.TestCase):
     def test_circle_area_zero(self):
         res = circle_area(0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
     
     def test_circle_area_positive(self):
         res = circle_area(1)
@@ -107,7 +107,7 @@ class CircleTestCase(unittest.TestCase):
     
     def test_circle_area_negative(self):
         res = circle_area(-2)
-        self.assertEqual(res, math.pi * 4)
+        self.assertEqual(res, "wrong input")
     
     def test_circle_area_float(self):
         res = circle_area(0.5)
@@ -119,7 +119,7 @@ class CircleTestCase(unittest.TestCase):
     
     def test_circle_perimeter_zero(self):
         res = circle_perimeter(0)
-        self.assertEqual(res, 0)
+        self.assertEqual(res, "wrong input")
     
     def test_circle_perimeter_positive(self):
         res = circle_perimeter(1)
@@ -127,7 +127,7 @@ class CircleTestCase(unittest.TestCase):
     
     def test_circle_perimeter_negative(self):
         res = circle_perimeter(-3)
-        self.assertEqual(res, 2 * math.pi * -3)
+        self.assertEqual(res, "wrong input")
     
     def test_circle_perimeter_float(self):
         res = circle_perimeter(2.5)
